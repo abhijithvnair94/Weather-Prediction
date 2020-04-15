@@ -4,8 +4,10 @@
  
  ## Dependencies
  
- - Sklearn
+ - Scikit Learn
  - Pandas
+ - Numpy
+ - Matplotlib
  
  ## Model
  
