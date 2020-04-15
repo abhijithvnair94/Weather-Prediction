@@ -20,14 +20,14 @@ plt.show()
 
 def data_processing(weather_data):
     
-    # *Removing the data with NaN values*
+    #Removing the data with NaN values
     weather_data.dropna(inplace =True)
     
 #    corr_mat = weather_data.corr()
     #sns.heatmap(corr_mat,annot=True)
     
     
-    # *Extracting the required features*
+    #Extracting the required features
     final_data = weather_data[["Rain","AvgWind","AvgHumidity","AvgPressure"]]
     
     #Avergaing the temperature value
@@ -47,7 +47,7 @@ def data_processing(weather_data):
     
 def model(X,y):
 
-    # Splitting the training and testing data
+    #Splitting the training and testing data
     X_train,X_test,y_train,y_test = train_test_split(X,y,train_size =0.75,random_state=1)
     
     #Fitting the training data
@@ -56,7 +56,7 @@ def model(X,y):
     ss.fit_transform(X_train)
     ss.fit(X_test)
     
-    # Regression
+    #Regression
     svr = SVR(kernel = "rbf", gamma = 0.001, C = 50, verbose=False)
     
     svr.fit(X_train,y_train)
@@ -64,7 +64,7 @@ def model(X,y):
     r2 = r2_score(y_test,y_pred)
 
     print("\n\nThe R2 score is %f" % r2)
-    
+    # comparing with true value and predicted value
 #    axis_1 = sns.distplot(y_test,hist=False,color ="r",label ="Actual Value")
 #    sns.distplot(y_pred,color ="b",hist = False,label = "Predicted Value",ax =axis_1)
     
