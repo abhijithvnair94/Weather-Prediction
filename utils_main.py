@@ -3,7 +3,7 @@ Created on Wed Apr  1 18:48:13 2020
 
 @author: Abhi
 
-Utils Functions for the prediction of the weather
+Functions for the prediction of the weather
 """
 # Required Libraries
 
